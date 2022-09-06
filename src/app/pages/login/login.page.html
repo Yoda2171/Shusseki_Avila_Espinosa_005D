@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" min=0><ion-icon  class="ion-margin-end" name="person-sharp"></ion-icon>Tipo de cuenta</ion-label>
+        <ion-select>
+          <ion-select-option value="Profesor">Profesor</ion-select-option>
+          <ion-select-option value="Estudiante">Estudiante</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"><ion-icon  class="ion-margin-end" name="body-sharp"></ion-icon>Username:</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"><ion-icon  class="ion-margin-end" name="lock-closed-sharp"></ion-icon>Password:</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <ion-button class="ion-margin-top" (click)="onClick()" expand="block" shape="round">
+        Login
+      </ion-button>
+      
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

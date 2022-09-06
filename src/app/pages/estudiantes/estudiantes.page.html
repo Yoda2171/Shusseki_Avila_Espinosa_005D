@@ -1,9 +1,98 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>estudiantes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Estudiantes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-text color="danger">
+        <h3>Monkey D Luffy</h3>
+      </ion-text>
+     
+      <ion-segment value="1">
+        <ion-segment-button value="1" layout="icon-end">
+          <ion-label>Item One</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2" layout="icon-end">
+          <ion-label>Item Two</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="3" layout="icon-end">
+          <ion-label>Item Three</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-item>
 
+    <ion-item>
+      <ion-text color="primary">
+        <h3>Nami</h3>
+      </ion-text>
+     
+      <ion-segment value="1">
+        <ion-segment-button value="1" layout="icon-end">
+          <ion-label>Item One</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2" layout="icon-end">
+          <ion-label>Item Two</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="3" layout="icon-end">
+          <ion-label>Item Three</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+
+    <ion-item>
+      <ion-text color="success">
+        <h3>Roronoa Zoro</h3>
+      </ion-text>
+     
+      <ion-segment value="1">
+        <ion-segment-button value="1" layout="icon-end">
+          <ion-label>Item One</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2" layout="icon-end">
+          <ion-label>Item Two</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="3" layout="icon-end">
+          <ion-label>Item Three</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+
+    <ion-item>
+      <ion-text color="warning">
+        <h3>Vinsmoke Sanji</h3>
+      </ion-text>
+     
+      <ion-segment value="1">
+        <ion-segment-button value="1" layout="icon-end">
+          <ion-label>Item One</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2" layout="icon-end">
+          <ion-label>Item Two</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="3" layout="icon-end">
+          <ion-label>Item Three</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-row>
+   
+    <ion-button (click)="presentarAlerta()" expand="block"  shape="round">
+      Generar QR
+    </ion-button>
+    <ion-button (click)="presentToast('bottom')" expand="block" shape="round">
+      Registrar Asistencia
+    </ion-button>
+    
+  </ion-row>
+
+  
 </ion-content>
