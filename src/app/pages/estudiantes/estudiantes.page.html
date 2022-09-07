@@ -13,16 +13,16 @@
       <ion-text color="danger">
         <h3>Monkey D Luffy</h3>
       </ion-text>
-     
+
       <ion-segment value="1">
         <ion-segment-button value="1" layout="icon-end">
-          <ion-label>Item One</ion-label>
+          <ion-label>Presente</ion-label>
         </ion-segment-button>
         <ion-segment-button value="2" layout="icon-end">
-          <ion-label>Item Two</ion-label>
+          <ion-label>Ausente</ion-label>
         </ion-segment-button>
         <ion-segment-button value="3" layout="icon-end">
-          <ion-label>Item Three</ion-label>
+          <ion-label>Justificado</ion-label>
         </ion-segment-button>
       </ion-segment>
     </ion-item>
@@ -31,16 +31,16 @@
       <ion-text color="primary">
         <h3>Nami</h3>
       </ion-text>
-     
+
       <ion-segment value="1">
         <ion-segment-button value="1" layout="icon-end">
-          <ion-label>Item One</ion-label>
+          <ion-label>Presente</ion-label>
         </ion-segment-button>
         <ion-segment-button value="2" layout="icon-end">
-          <ion-label>Item Two</ion-label>
+          <ion-label>Ausente</ion-label>
         </ion-segment-button>
         <ion-segment-button value="3" layout="icon-end">
-          <ion-label>Item Three</ion-label>
+          <ion-label>Justificado</ion-label>
         </ion-segment-button>
       </ion-segment>
     </ion-item>
@@ -49,50 +49,47 @@
       <ion-text color="success">
         <h3>Roronoa Zoro</h3>
       </ion-text>
-     
+
       <ion-segment value="1">
         <ion-segment-button value="1" layout="icon-end">
-          <ion-label>Item One</ion-label>
+          <ion-label>Presente</ion-label>
         </ion-segment-button>
         <ion-segment-button value="2" layout="icon-end">
-          <ion-label>Item Two</ion-label>
+          <ion-label>Ausente</ion-label>
         </ion-segment-button>
         <ion-segment-button value="3" layout="icon-end">
-          <ion-label>Item Three</ion-label>
+          <ion-label>Justificado</ion-label>
         </ion-segment-button>
       </ion-segment>
     </ion-item>
 
     <ion-item>
-      <ion-text color="warning">
+      <ion-text class="ion-padding-end" size="5" color="warning">
         <h3>Vinsmoke Sanji</h3>
       </ion-text>
-     
+
       <ion-segment value="1">
         <ion-segment-button value="1" layout="icon-end">
-          <ion-label>Item One</ion-label>
+          <ion-label>Presente</ion-label>
         </ion-segment-button>
         <ion-segment-button value="2" layout="icon-end">
-          <ion-label>Item Two</ion-label>
+          <ion-label>Ausente</ion-label>
         </ion-segment-button>
         <ion-segment-button value="3" layout="icon-end">
-          <ion-label>Item Three</ion-label>
+          <ion-label>Justificado</ion-label>
         </ion-segment-button>
       </ion-segment>
     </ion-item>
-
   </ion-list>
 
   <ion-row>
-   
-    <ion-button (click)="presentarAlerta()" expand="block"  shape="round">
-      Generar QR
+    <ion-button (click)="presentarAlerta()" expand="block" shape="round">
+      <ion-icon class="ion-margin-end" name="qr-code"></ion-icon>
+      <ion-text> Generar QR </ion-text>
     </ion-button>
     <ion-button (click)="presentToast('bottom')" expand="block" shape="round">
-      Registrar Asistencia
+      <ion-icon class="ion-margin-end" name="save"></ion-icon>
+      <ion-text>Registrar Asistencia</ion-text>
     </ion-button>
-    
   </ion-row>
-
-  
 </ion-content>

@@ -1,8 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button (click)="openMenu()">
-      <ion-icon name="school"></ion-icon>
-    </ion-button>
+    <ion-buttons slot="start">
+      <ion-button (click)="openMenu()">
+        <ion-icon slot="start" name="school" color="dark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,7 +15,7 @@
     
   </ion-text>
   <ion-text class="ion-text-center"  color="warning">
-    <p>Tu aplicacion para tomar asistencia del insituto Duoc UC</p>
+    <p>Tu aplicacion para tomar la asistencia del insituto Duoc UC</p>
   </ion-text>
  
 </ion-content>
