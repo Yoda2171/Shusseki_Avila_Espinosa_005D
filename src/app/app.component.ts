@@ -14,14 +14,9 @@ interface Componente {
 export class AppComponent {
   componentes: Componente[] = [
     {
-      icon: 'pencil',
-      name: 'Estudiantes',
-      redirecTo: '/estudiantes',
-    },
-    {
-      icon: 'person',
-      name: 'Profesores',
-      redirecTo: '/profesores',
+      icon: 'camera',
+      name: 'Escanear QR',
+      redirecTo: '/scan-qr',
     },
     {
       icon: 'qr-code',
