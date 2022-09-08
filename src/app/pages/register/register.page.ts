@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+  usuario = {
+    username: '',
+    email: '',
+    password: '',
+    phonenumber:'',
+    tipo:'',
+  };
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  onSubmit() {
+    console.log(this.usuario);
   }
-
 }
