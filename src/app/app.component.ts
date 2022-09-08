@@ -28,6 +28,11 @@ export class AppComponent {
       name: 'Cursos',
       redirecTo: '/cursos',
     },
+    {
+      icon: 'help',
+      name: 'About-us',
+      redirecTo: '/about-us',
+    },
   ];
   constructor() {}
 
