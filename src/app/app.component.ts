@@ -30,17 +30,17 @@ export class AppComponent {
     },
     {
       icon: 'person-sharp',
-      name: 'Profile-profesores',
+      name: 'Profile Profesores',
       redirecTo: '/profile-profesores',
     },
     {
       icon: 'person-sharp',
-      name: 'Profile-estudiantes',
+      name: 'Profile Estudiantes',
       redirecTo: '/profile-estudiantes',
     },
     {
       icon: 'help',
-      name: 'About-us',
+      name: 'About us',
       redirecTo: '/about-us',
     },
   ];
