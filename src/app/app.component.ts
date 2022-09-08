@@ -29,6 +29,16 @@ export class AppComponent {
       redirecTo: '/cursos',
     },
     {
+      icon: 'person-sharp',
+      name: 'Profile-profesores',
+      redirecTo: '/profile-profesores',
+    },
+    {
+      icon: 'person-sharp',
+      name: 'Profile-estudiantes',
+      redirecTo: '/profile-estudiantes',
+    },
+    {
       icon: 'help',
       name: 'About-us',
       redirecTo: '/about-us',

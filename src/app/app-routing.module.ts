@@ -43,6 +43,14 @@ const routes: Routes = [
     path: 'about-us',
     loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
   },
+  {
+    path: 'profile-estudiantes',
+    loadChildren: () => import('./pages/profile-estudiantes/profile-estudiantes.module').then( m => m.ProfileEstudiantesPageModule)
+  },
+  {
+    path: 'profile-profesores',
+    loadChildren: () => import('./pages/profile-profesores/profile-profesores.module').then( m => m.ProfileProfesoresPageModule)
+  },
 
 
 ];
