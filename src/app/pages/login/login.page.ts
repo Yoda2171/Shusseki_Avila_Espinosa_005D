@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+  usuario = {
+    username: '',
+    password: '',
+    tipo:'',
+  };
 
   constructor() { }
 
   ngOnInit() {
   }
-
+  onSubmit(){
+    console.log(this.usuario);
+  }
 }

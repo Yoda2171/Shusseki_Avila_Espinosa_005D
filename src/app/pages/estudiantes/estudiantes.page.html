@@ -1,9 +1,116 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>estudiantes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Estudiantes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-text color="danger">
+      <p>Monkey D Luffy</p>
+    </ion-text>
+    <ion-radio-group>
+      <ion-row>
+        <ion-item>
+          <ion-label class="ion-margin-end">Presente</ion-label>
+          <ion-radio value="Presente"></ion-radio>
+        </ion-item>
 
+        <ion-item>
+          <ion-label class="ion-margin-end">Ausente</ion-label>
+          <ion-radio value="Ausente"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-margin-end">Justificado</ion-label>
+          <ion-radio value="Justificado"></ion-radio>
+        </ion-item>
+      </ion-row>
+    </ion-radio-group>
+  </ion-item>
+
+  <ion-item>
+    <ion-text color="primary">
+      <p>Nami</p>
+    </ion-text>
+
+    <ion-radio-group>
+      <ion-row>
+        <ion-item>
+          <ion-label class="ion-margin-end">Presente</ion-label>
+          <ion-radio value="Presente"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label class="ion-margin-end" >Ausente</ion-label>
+          <ion-radio value="Ausente"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-margin-end">Justificado</ion-label>
+          <ion-radio value="Justificado"></ion-radio>
+        </ion-item>
+      </ion-row>
+    </ion-radio-group>
+  </ion-item>
+
+  <ion-item>
+    <ion-text color="success">
+      <p>Roronoa Zoro</p>
+    </ion-text>
+
+    <ion-radio-group>
+      <ion-row>
+        <ion-item>
+          <ion-label class="ion-margin-end">Presente</ion-label>
+          <ion-radio value="Presente"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label class="ion-margin-end">Ausente</ion-label>
+          <ion-radio value="Ausente"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-margin-end">Justificado</ion-label>
+          <ion-radio value="Justificado"></ion-radio>
+        </ion-item>
+      </ion-row>
+    </ion-radio-group>
+  </ion-item>
+
+  <ion-item>
+    <ion-text  color="warning">
+      <p>Vinsmoke Sanji</p>
+    </ion-text>
+
+    <ion-radio-group >
+      <ion-row>
+        <ion-item>
+          <ion-label class="ion-margin-end">Presente</ion-label>
+          <ion-radio value="Presente"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label class="ion-margin-end">Ausente</ion-label>
+          <ion-radio value="Ausente"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-margin-end">Justificado</ion-label>
+          <ion-radio value="Justificado"></ion-radio>
+        </ion-item>
+      </ion-row>
+    </ion-radio-group>
+  </ion-item>
+
+  <ion-row>
+    <ion-button (click)="presentarAlerta()" expand="block" shape="round">
+      <ion-icon class="ion-margin-end" name="qr-code"></ion-icon>
+      <ion-text> Generar QR </ion-text>
+    </ion-button>
+    <ion-button (click)="presentToast('bottom')" expand="block" shape="round">
+      <ion-icon class="ion-margin-end" name="save"></ion-icon>
+      <ion-text>Registrar Asistencia</ion-text>
+    </ion-button>
+  </ion-row>
 </ion-content>

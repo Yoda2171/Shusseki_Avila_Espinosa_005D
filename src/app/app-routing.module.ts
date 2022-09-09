@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'login',
@@ -31,6 +32,27 @@ const routes: Routes = [
     path: 'code-qr',
     loadChildren: () => import('./pages/code-qr/code-qr.module').then( m => m.CodeQRPageModule)
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+  },  {
+    path: 'scan-qr',
+    loadChildren: () => import('./pages/scan-qr/scan-qr.module').then( m => m.ScanQRPageModule)
+  },
+  {
+    path: 'about-us',
+    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
+  },
+  {
+    path: 'profile-estudiantes',
+    loadChildren: () => import('./pages/profile-estudiantes/profile-estudiantes.module').then( m => m.ProfileEstudiantesPageModule)
+  },
+  {
+    path: 'profile-profesores',
+    loadChildren: () => import('./pages/profile-profesores/profile-profesores.module').then( m => m.ProfileProfesoresPageModule)
+  },
+
+
 ];
 
 @NgModule({
