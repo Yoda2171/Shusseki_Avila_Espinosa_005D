@@ -16,7 +16,7 @@
             ><ion-icon class="ion-margin-end" name="person-sharp"></ion-icon
             >Tipo de cuenta</ion-label
           >
-          <ion-select formControlName="tipoCuenta">
+          <ion-select formControlName="tipoCuenta" name="tipo" required>
             <ion-select-option value="Profesor">Profesor</ion-select-option>
             <ion-select-option value="Estudiante">Estudiante</ion-select-option>
           </ion-select>
@@ -26,7 +26,7 @@
             ><ion-icon class="ion-margin-end" name="body-sharp"></ion-icon
             >Username:</ion-label
           >
-          <ion-input formControlName="username" type="text" [(ngModel)] ="usuario.username" ></ion-input>
+          <ion-input formControlName="username" type="text" name="username" required></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked"
@@ -36,7 +36,7 @@
             ></ion-icon
             >Password:</ion-label
           >
-          <ion-input formControlName="password" type="password" [(ngModel)] ="usuario.password"></ion-input>
+          <ion-input formControlName="password" type="password"  name="password" required></ion-input>
         </ion-item>
         <ion-button
           class="ion-margin-top"

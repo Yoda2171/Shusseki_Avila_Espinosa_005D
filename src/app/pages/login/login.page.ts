@@ -11,20 +11,19 @@ import { Usuario } from 'src/app/interface';
 })
 export class LoginPage implements OnInit {
   formularioLogin :FormGroup;
-  
+  public usuario: Usuario[];
 
   constructor(
       private alercontroller:AlertController,
       private navController : NavController,
       private registroService:RegisterServiceService,
       private formBuilder:FormBuilder,
-      private usuario :Usuario[],
     ) {
       this.formularioLogin=this.formBuilder.group({
         'tipoCuenta': new FormControl("",Validators.required),
         'username':new FormControl("",Validators.required),
         'password':new FormControl("",Validators.required),
-      })
+      });
      }
 
   ngOnInit() {
