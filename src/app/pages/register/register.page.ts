@@ -14,13 +14,14 @@ export class RegisterPage implements OnInit {
 
   formularioRegistro:FormGroup;
   newUsuaio:Usuario=<Usuario>{};
+  public usuario: Usuario[];
 
   constructor(
     private registerService: RegisterServiceService,
     private alertController:AlertController,
     private toastController:ToastController,
     private formBuilder: FormBuilder,
-    private usuario : Usuario,
+    
   ) {
     this.formularioRegistro= this.formBuilder.group({
       'username': new FormControl("", Validators.required),
@@ -47,15 +48,15 @@ export class RegisterPage implements OnInit {
       return;
     }
 
-    this.newUsuaio.correo=form.correo,
-    this.newUsuaio.nombre=form.nombre,
+    this.newUsuaio.correo=form.email,
+    this.newUsuaio.nombre=form.username,
     this.newUsuaio.password=form.password,
     this.newUsuaio.telefono=form.number,
-    this.newUsuaio.tipo=form.tipo
-    this.registerService.addDatos(this.newUsuaio).then(dato=>{
+    this.newUsuaio.tipo=form.tipo,
+    this.registerService.addDatos(this.newUsuaio).then(dato =>{
       this.newUsuaio=<Usuario>{};
       this.showToast('Dato agregados');
-    })
+    });
   }
 
 
@@ -63,7 +64,7 @@ export class RegisterPage implements OnInit {
     const toast = await this.toastController.create({
       message:msg,
       duration:2000
-    })
+    });
     toast.present();
   }
 
