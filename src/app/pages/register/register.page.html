@@ -8,28 +8,28 @@
 </ion-header>
 
 <ion-content>
-  <form>
+  <form [formGroup] ="formularioRegistro">
     <ion-card>
       <ion-card-content>
         <ion-item>
           <ion-label position="stacked">Username:</ion-label>
-          <ion-input name=username type="text" [(ngModel)] ="usuario.username"></ion-input>
+          <ion-input formControlName=username type="text" ></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Password:</ion-label>
-          <ion-input name=password type="password" [(ngModel)] ="usuario.password"></ion-input>
+          <ion-input formControlName=password type="password" ></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Email:</ion-label>
-          <ion-input name=email type="email" [(ngModel)] ="usuario.email"></ion-input>
+          <ion-input formControlName=email type="email" ></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">PhoneNumber:</ion-label>
-          <ion-input name=number type="number" min="0" [(ngModel)] ="usuario.phonenumber"></ion-input>
+          <ion-input formControlName=number type="number" min="0" ></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="stacked">Tipo de cuenta</ion-label>
-          <ion-select name=tipo [(ngModel)] ="usuario.tipo">
+          <ion-select formControlName=tipo >
             <ion-select-option value="Profesor">Profesor</ion-select-option>
             <ion-select-option value="Estudiante">Estudiante</ion-select-option>
           </ion-select>
@@ -37,7 +37,7 @@
 
         <ion-button
           class="ion-margin-top"
-          (click)="onSubmit()"
+          (click)="crearUsuario()"
           expand="block"
           shape="round"
         >
