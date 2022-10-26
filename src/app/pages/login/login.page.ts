@@ -71,9 +71,6 @@ export class LoginPage implements OnInit {
         }
       });
     }
-    if(a===0){
-      this.alertMSG();
-    }
   }
 
   async alertMSG() {
