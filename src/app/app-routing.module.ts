@@ -70,7 +70,7 @@ const routes: Routes = [
       import('./pages/profile-estudiantes/profile-estudiantes.module').then(
         (m) => m.ProfileEstudiantesPageModule
       ),
-    canActivate: [IngresadoEstudianteGuard],
+    canActivate: [IngresadoEstudianteGuard || IngresadoProfesorGuard],
   },
   {
     path: 'profile-profesores',
@@ -78,7 +78,6 @@ const routes: Routes = [
       import('./pages/profile-profesores/profile-profesores.module').then(
         (m) => m.ProfileProfesoresPageModule
       ),
-    canActivate: [IngresadoProfesorGuard],
   },
   {
     path: 'mascotas',
@@ -88,6 +87,11 @@ const routes: Routes = [
       ),
     canActivate: [IngresadoEstudianteGuard, IngresadoProfesorGuard],
   },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+
 ];
 
 @NgModule({

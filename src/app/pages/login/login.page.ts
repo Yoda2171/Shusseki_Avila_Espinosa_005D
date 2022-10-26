@@ -41,11 +41,11 @@ export class LoginPage implements OnInit {
         if(datos.length===0){
           return null;
         }
-        for(let item of this.usuario){
+        for(const item of this.usuario){
           if(item.correo===formulario.correo && item.password === formulario.password){
             a=1;
-            localStorage.setItem('INGRESADO ESTUDIANTE','true');
-            this.navController.navigateRoot('profile-estudiantes');
+            localStorage.setItem('INGRESADO ESTUDIANTE',JSON.stringify(item));
+            this.navController.navigateRoot('inicio');
           }
           if(a===0){
             this.alertMSG();
@@ -59,11 +59,11 @@ export class LoginPage implements OnInit {
         if(datos.length===0){
           return null;
         }
-        for(let item of this.usuario){
+        for(const item of this.usuario){
           if(item.correo===formulario.correo && item.password === formulario.password){
             a=1;
-            localStorage.setItem('INGRESADO PROFESOR','true');
-            this.navController.navigateRoot('profile-profesores');
+            localStorage.setItem('INGRESADO PROFESOR',JSON.stringify(item));
+            this.navController.navigateRoot('inicio');
           }
           if(a===0){
             this.alertMSG();

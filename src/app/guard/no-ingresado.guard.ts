@@ -23,10 +23,10 @@ export class NoIngresadoGuard implements CanActivate {
     | boolean
     | UrlTree {
     if (localStorage.getItem('INGRESADO PROFESOR')) {
-      this.navController.navigateRoot('profile-profesores');
+      this.navController.navigateRoot('inicio');
       return false;
     } else if (localStorage.getItem('INGRESADO ESTUDIANTE')) {
-      this.navController.navigateRoot('profile-estudiantes');
+      this.navController.navigateRoot('inicio');
       return false;
     } else {
       return true;

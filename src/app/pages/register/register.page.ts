@@ -43,7 +43,7 @@ export class RegisterPage implements OnInit {
     this.newUsuario.correo = form.email;
     this.newUsuario.nombre = form.username;
     this.newUsuario.password = form.password;
-    this.newUsuario.telefono = form.number;
+    this.newUsuario.telefono = form.telefono;
     this.newUsuario.tipo = form.tipo;
     if (form.tipo === 'Estudiante') {
       this.registerService.addEstudiante(this.newUsuario).then((dato) => {
