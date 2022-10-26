@@ -11,12 +11,13 @@ export class ProfileEstudiantesPage implements OnInit {
     this.getUser();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getUser();
+  }
 
   async getUser() {
     if (localStorage.getItem('INGRESADO PROFESOR')) {
       const item = JSON.parse(localStorage.getItem('INGRESADO PROFESOR'));
-      console.log(item.nombre);
       this.user.username = item.nombre;
       this.user.email = item.correo;
       this.user.telefono = item.telefono;

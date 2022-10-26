@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IngresadoEstudianteGuard } from './guard/ingresado-estudiante.guard';
-import { IngresadoProfesorGuard } from './guard/ingresado-profesor.guard';
+import { IngresadoprofesorGuard } from './guard/ingresadoprofesor.guard';
 import { NoIngresadoGuard } from './guard/no-ingresado.guard';
 
 const routes: Routes = [
@@ -34,7 +34,7 @@ const routes: Routes = [
     path: 'cursos',
     loadChildren: () =>
       import('./pages/cursos/cursos.module').then((m) => m.CursosPageModule),
-    canActivate: [IngresadoEstudianteGuard, IngresadoProfesorGuard],
+    canActivate: [IngresadoprofesorGuard, IngresadoEstudianteGuard],
   },
   {
     path: 'estudiantes',
@@ -42,7 +42,7 @@ const routes: Routes = [
       import('./pages/estudiantes/estudiantes.module').then(
         (m) => m.EstudiantesPageModule
       ),
-    canActivate: [IngresadoProfesorGuard],
+    canActivate: [IngresadoprofesorGuard],
   },
   {
     path: 'code-qr',
@@ -62,7 +62,7 @@ const routes: Routes = [
       import('./pages/about-us/about-us.module').then(
         (m) => m.AboutUsPageModule
       ),
-    canActivate: [IngresadoEstudianteGuard, IngresadoProfesorGuard],
+    canActivate: [IngresadoprofesorGuard, IngresadoEstudianteGuard],
   },
   {
     path: 'profile-estudiantes',
@@ -70,7 +70,7 @@ const routes: Routes = [
       import('./pages/profile-estudiantes/profile-estudiantes.module').then(
         (m) => m.ProfileEstudiantesPageModule
       ),
-    canActivate: [IngresadoEstudianteGuard || IngresadoProfesorGuard],
+    canActivate: [IngresadoprofesorGuard, IngresadoEstudianteGuard],
   },
   {
     path: 'profile-profesores',
@@ -85,13 +85,13 @@ const routes: Routes = [
       import('./pages/mascotas/mascotas.module').then(
         (m) => m.MascotasPageModule
       ),
-    canActivate: [IngresadoEstudianteGuard, IngresadoProfesorGuard],
+    canActivate: [IngresadoprofesorGuard, IngresadoEstudianteGuard],
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () =>
+      import('./pages/inicio/inicio.module').then((m) => m.InicioPageModule),
   },
-
 ];
 
 @NgModule({
