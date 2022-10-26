@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IngresadoEstudianteGuard } from './guard/ingresado-estudiante.guard';
 import { IngresadoprofesorGuard } from './guard/ingresadoprofesor.guard';
+import { IngresoAmbosGuard } from './guard/ingreso-ambos.guard';
 import { NoIngresadoGuard } from './guard/no-ingresado.guard';
 
 const routes: Routes = [
@@ -34,7 +35,7 @@ const routes: Routes = [
     path: 'cursos',
     loadChildren: () =>
       import('./pages/cursos/cursos.module').then((m) => m.CursosPageModule),
-    canActivate: [IngresadoprofesorGuard, IngresadoEstudianteGuard],
+    canActivate: [IngresoAmbosGuard],
   },
   {
     path: 'estudiantes',
@@ -62,7 +63,7 @@ const routes: Routes = [
       import('./pages/about-us/about-us.module').then(
         (m) => m.AboutUsPageModule
       ),
-    canActivate: [IngresadoprofesorGuard, IngresadoEstudianteGuard],
+    canActivate: [IngresoAmbosGuard],
   },
   {
     path: 'profile-estudiantes',
@@ -70,7 +71,7 @@ const routes: Routes = [
       import('./pages/profile-estudiantes/profile-estudiantes.module').then(
         (m) => m.ProfileEstudiantesPageModule
       ),
-    canActivate: [IngresadoprofesorGuard, IngresadoEstudianteGuard],
+    canActivate: [IngresoAmbosGuard],
   },
   {
     path: 'profile-profesores',
@@ -85,7 +86,7 @@ const routes: Routes = [
       import('./pages/mascotas/mascotas.module').then(
         (m) => m.MascotasPageModule
       ),
-    canActivate: [IngresadoprofesorGuard, IngresadoEstudianteGuard],
+    canActivate: [IngresoAmbosGuard],
   },
   {
     path: 'inicio',
