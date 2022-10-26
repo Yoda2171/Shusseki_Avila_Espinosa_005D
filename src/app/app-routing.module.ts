@@ -1,68 +1,99 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IngresadoEstudianteGuard } from './guard/ingresado-estudiante.guard';
+import { IngresadoProfesorGuard } from './guard/ingresado-profesor.guard';
+import { NoIngresadoGuard } from './guard/no-ingresado.guard';
 
 const routes: Routes = [
-
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomePageModule),
+    canActivate: [NoIngresadoGuard],
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginPageModule),
+    canActivate: [NoIngresadoGuard],
   },
   {
     path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () =>
+      import('./pages/register/register.module').then(
+        (m) => m.RegisterPageModule
+      ),
+    canActivate: [NoIngresadoGuard],
   },
   {
     path: 'cursos',
-    loadChildren: () => import('./pages/cursos/cursos.module').then( m => m.CursosPageModule)
+    loadChildren: () =>
+      import('./pages/cursos/cursos.module').then((m) => m.CursosPageModule),
+    canActivate: [IngresadoEstudianteGuard, IngresadoProfesorGuard],
   },
   {
     path: 'estudiantes',
-    loadChildren: () => import('./pages/estudiantes/estudiantes.module').then( m => m.EstudiantesPageModule)
+    loadChildren: () =>
+      import('./pages/estudiantes/estudiantes.module').then(
+        (m) => m.EstudiantesPageModule
+      ),
+    canActivate: [IngresadoProfesorGuard],
   },
   {
     path: 'code-qr',
-    loadChildren: () => import('./pages/code-qr/code-qr.module').then( m => m.CodeQRPageModule)
+    loadChildren: () =>
+      import('./pages/code-qr/code-qr.module').then((m) => m.CodeQRPageModule),
+    canActivate: [IngresadoEstudianteGuard],
   },
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },  {
     path: 'scan-qr',
-    loadChildren: () => import('./pages/scan-qr/scan-qr.module').then( m => m.ScanQRPageModule)
+    loadChildren: () =>
+      import('./pages/scan-qr/scan-qr.module').then((m) => m.ScanQRPageModule),
+    canActivate: [IngresadoEstudianteGuard],
   },
   {
     path: 'about-us',
-    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
+    loadChildren: () =>
+      import('./pages/about-us/about-us.module').then(
+        (m) => m.AboutUsPageModule
+      ),
+    canActivate: [IngresadoEstudianteGuard, IngresadoProfesorGuard],
   },
   {
     path: 'profile-estudiantes',
-    loadChildren: () => import('./pages/profile-estudiantes/profile-estudiantes.module').then( m => m.ProfileEstudiantesPageModule)
+    loadChildren: () =>
+      import('./pages/profile-estudiantes/profile-estudiantes.module').then(
+        (m) => m.ProfileEstudiantesPageModule
+      ),
+    canActivate: [IngresadoEstudianteGuard],
   },
   {
     path: 'profile-profesores',
-    loadChildren: () => import('./pages/profile-profesores/profile-profesores.module').then( m => m.ProfileProfesoresPageModule)
+    loadChildren: () =>
+      import('./pages/profile-profesores/profile-profesores.module').then(
+        (m) => m.ProfileProfesoresPageModule
+      ),
+    canActivate: [IngresadoProfesorGuard],
   },
   {
     path: 'mascotas',
-    loadChildren: () => import('./pages/mascotas/mascotas.module').then( m => m.MascotasPageModule)
+    loadChildren: () =>
+      import('./pages/mascotas/mascotas.module').then(
+        (m) => m.MascotasPageModule
+      ),
+    canActivate: [IngresadoEstudianteGuard, IngresadoProfesorGuard],
   },
-
-
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
