@@ -47,9 +47,9 @@ export class LoginPage implements OnInit {
             localStorage.setItem('INGRESADO ESTUDIANTE',JSON.stringify(item));
             this.navController.navigateRoot('inicio');
           }
-          if(a===0){
-            this.alertMSG();
-          }
+        }
+        if(a===0){
+          this.alertMSG();
         }
       });
     }
@@ -65,9 +65,9 @@ export class LoginPage implements OnInit {
             localStorage.setItem('INGRESADO PROFESOR',JSON.stringify(item));
             this.navController.navigateRoot('inicio');
           }
-          if(a===0){
-            this.alertMSG();
-          }
+        }
+        if(a===0){
+          this.alertMSG();
         }
       });
     }
