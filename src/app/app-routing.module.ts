@@ -79,12 +79,19 @@ const routes: Routes = [
       import('./pages/inicio/inicio.module').then((m) => m.InicioPageModule),
     canActivate: [IngresoAmbosGuard],
   },
+  {
+    path: 'pokedex',
+    loadChildren: () => import('./pages/pokedex/pokedex.module').then( m => m.PokedexPageModule),
+    canActivate: [IngresoAmbosGuard],
+  },
+
+
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

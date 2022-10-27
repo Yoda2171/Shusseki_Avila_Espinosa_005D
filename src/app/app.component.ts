@@ -39,6 +39,11 @@ export class AppComponent {
       name: 'About us',
       redirecTo: '/about-us',
     },
+    {
+      icon:'save',
+      name:'Pokedex',
+      redirecTo:'/pokedex',
+    },
   ];
   constructor(
     private navController: NavController
