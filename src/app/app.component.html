@@ -6,11 +6,19 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <ion-menu-toggle *ngFor="let i of componentes">
-        <ion-item [routerLink]="i.redirecTo" detail=true>
-          <ion-icon slot="start" [name]="i.icon" color="warning"></ion-icon>
-          {{ i.name }}
-        </ion-item>
+      <ion-menu-toggle>
+        <div *ngFor="let i of componentes">
+          <ion-item [routerLink]="i.redirecTo" detail="true">
+            <ion-icon slot="start" [name]="i.icon" color="warning"></ion-icon>
+            {{ i.name }}
+          </ion-item>
+        </div>
+        
+          <ion-item button (click)="logout()">
+            <ion-icon slot="start" name="log-out" color="warning" ></ion-icon>
+            Log Out
+          </ion-item>
+    
       </ion-menu-toggle>
     </ion-content>
   </ion-menu>

@@ -8,24 +8,49 @@
 </ion-header>
 
 <ion-content>
-  <ion-card routerLink="/estudiantes" class="ion-activated">
-    <ion-img src="assets/icon/Curso 1.png"></ion-img>
-    <ion-card-content>
-      <ion-text>Curso 1</ion-text>
-    </ion-card-content>
-  </ion-card>
+  <div *ngIf="tipo==='Estudiante'">
+    <ion-card routerLink="/scan-qr" class="ion-activated">
+      <ion-img src="assets/icon/Curso 1.png"></ion-img>
+      <ion-card-content>
+        <ion-text>Curso 1</ion-text>
+      </ion-card-content>
+    </ion-card>
 
-  <ion-card routerLink="/estudiantes" class="ion-activated">
-    <ion-img src="assets/icon/Curso2.png"></ion-img>
-    <ion-card-content>
-      <ion-text>Curso 2</ion-text>
-    </ion-card-content>
-  </ion-card>
+    <ion-card routerLink="/scan-qr" class="ion-activated">
+      <ion-img src="assets/icon/Curso 1.png"></ion-img>
+      <ion-card-content>
+        <ion-text>Curso 2</ion-text>
+      </ion-card-content>
+    </ion-card>
 
-  <ion-card routerLink="/estudiantes" class="ion-activated">
-    <ion-img src="assets/icon/Curso 1.png"></ion-img>
-    <ion-card-content>
-      <ion-text>Curso 3</ion-text>
-    </ion-card-content>
-  </ion-card>
+    <ion-card routerLink="/scan-qr" class="ion-activated">
+      <ion-img src="assets/icon/Curso2.png"></ion-img>
+      <ion-card-content>
+        <ion-text>Curso 3</ion-text>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="tipo==='Profesor'">
+    <ion-card routerLink="/estudiantes" class="ion-activated">
+      <ion-img src="assets/icon/Curso2.png"></ion-img>
+      <ion-card-content>
+        <ion-text>Curso 1</ion-text>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card routerLink="/estudiantes" class="ion-activated">
+      <ion-img src="assets/icon/Curso 1.png"></ion-img>
+      <ion-card-content>
+        <ion-text>Curso 2</ion-text>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card routerLink="/estudiantes" class="ion-activated">
+      <ion-img src="assets/icon/Curso 1.png"></ion-img>
+      <ion-card-content>
+        <ion-text>Curso 3</ion-text>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

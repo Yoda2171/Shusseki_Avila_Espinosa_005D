@@ -6,10 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-estudiantes.page.scss'],
 })
 export class ProfileEstudiantesPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  user = { username: String, email: String, telefono: Number, tipo: String };
+  constructor() {
+    this.getUser();
   }
 
+  ngOnInit() {
+    this.getUser();
+  }
+
+  async getUser() {
+    if (localStorage.getItem('INGRESADO PROFESOR')) {
+      const item = JSON.parse(localStorage.getItem('INGRESADO PROFESOR'));
+      this.user.username = item.nombre;
+      this.user.email = item.correo;
+      this.user.telefono = item.telefono;
+      this.user.tipo = item.tipo;
+      return this.user;
+    }
+    if (localStorage.getItem('INGRESADO ESTUDIANTE')) {
+      const item = JSON.parse(localStorage.getItem('INGRESADO ESTUDIANTE'));
+      this.user.username = item.nombre;
+      this.user.email = item.correo;
+      this.user.telefono = item.telefono;
+      this.user.tipo = item.tipo;
+      return this.user;
+    }
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 interface Componente {
   icon: string;
@@ -30,12 +31,7 @@ export class AppComponent {
     },
     {
       icon: 'person-sharp',
-      name: 'Profile Profesores',
-      redirecTo: '/profile-profesores',
-    },
-    {
-      icon: 'person-sharp',
-      name: 'Profile Estudiantes',
+      name: 'Profile',
       redirecTo: '/profile-estudiantes',
     },
     {
@@ -43,7 +39,21 @@ export class AppComponent {
       name: 'About us',
       redirecTo: '/about-us',
     },
+    {
+      icon:'save',
+      name:'Pokedex',
+      redirecTo:'/pokedex',
+    },
   ];
-  constructor() {}
+  constructor(
+    private navController: NavController
+  ) {}
+
+  async logout() {
+    localStorage.clear();
+    this.navController.navigateRoot('home');
+  }
+
+
 
 }
