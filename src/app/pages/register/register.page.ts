@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { RegisterServiceService } from 'src/app/services/register-service.service';
-import { AlertController, ToastController } from '@ionic/angular';
+import { AlertController, IonItem, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +17,7 @@ import { AlertController, ToastController } from '@ionic/angular';
 export class RegisterPage implements OnInit {
   formularioRegistro: FormGroup;
   newUsuario: Usuario = <Usuario>{};
-  public usuario: Usuario[];
+  usuario: Usuario[] = [];
 
   constructor(
     private registerService: RegisterServiceService,
@@ -34,32 +34,71 @@ export class RegisterPage implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   async crearUsuario() {
     const form = this.formularioRegistro.value;
-    console.log(form);
+    let a = 0;
 
     this.newUsuario.correo = form.email;
     this.newUsuario.nombre = form.username;
     this.newUsuario.password = form.password;
     this.newUsuario.telefono = form.telefono;
     this.newUsuario.tipo = form.tipo;
+
     if (form.tipo === 'Estudiante') {
-      this.registerService.addEstudiante(this.newUsuario).then((dato) => {
-        this.newUsuario = <Usuario>{};
-        this.showToast('Dato agregados');
-        this.formularioRegistro.reset();
+      this.registerService.getEstudiantes().then((datos) => {
+        this.usuario = datos;
+        if (datos !== null) {
+          const igualoCorreo = this.usuario.find((user) => form.email === user.correo);
+          if (!igualoCorreo) {
+            this.registerService.addEstudiante(this.newUsuario).then((dato) => {
+              this.newUsuario = <Usuario>{};
+              this.showToast('Dato agregados');
+              this.formularioRegistro.reset();
+            });
+          } else {
+            this.alertaError();
+          }
+
+        } else {
+          this.registerService.addEstudiante(this.newUsuario).then((dato) => {
+            this.newUsuario = <Usuario>{};
+            this.showToast('Dato agregados');
+            this.formularioRegistro.reset();
+          });
+        }
+
+
+
       });
     }
+
     if (form.tipo === 'Profesor') {
-      this.registerService.addProfesores(this.newUsuario).then((dato) => {
-        this.newUsuario = <Usuario>{};
-        this.showToast('Dato agregados');
-        this.formularioRegistro.reset();
+      this.registerService.getProfesores().then((datos) => {
+        this.usuario = datos;
+        if (datos !== null) {
+          const igualoCorreo = this.usuario.find((user) => form.email === user.correo);
+          if (!igualoCorreo) {
+            this.registerService.addProfesores(this.newUsuario).then((dato) => {
+              this.newUsuario = <Usuario>{};
+              this.showToast('Dato agregados');
+              this.formularioRegistro.reset();
+            });
+          } else {
+            this.alertaError();
+          }
+        } else {
+          this.registerService.addProfesores(this.newUsuario).then((dato) => {
+            this.newUsuario = <Usuario>{};
+            this.showToast('Dato agregados');
+            this.formularioRegistro.reset();
+          });
+        }
+
+
       });
     }
-    
 
     if (this.formularioRegistro.invalid) {
       const alert = await this.alertController.create({
@@ -81,6 +120,15 @@ export class RegisterPage implements OnInit {
     toast.present();
   }
 
+  async alertaError() {
+    const alert = await this.alertController.create({
+      header: 'Datos incorrectos',
+      message: 'Usuario Ya Existente',
+      buttons: ['Aceptar'],
+    });
+    await alert.present();
+    return;
+  }
   onSubmit() {
     console.log(this.usuario);
   }
