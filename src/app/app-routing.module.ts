@@ -32,10 +32,8 @@ const routes: Routes = [
     path: 'code-qr',
     loadChildren: () => import('./pages/code-qr/code-qr.module').then( m => m.CodeQRPageModule)
   },
+  
   {
-    path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
-  },  {
     path: 'scan-qr',
     loadChildren: () => import('./pages/scan-qr/scan-qr.module').then( m => m.ScanQRPageModule)
   },
@@ -50,6 +48,10 @@ const routes: Routes = [
   {
     path: 'profile-profesores',
     loadChildren: () => import('./pages/profile-profesores/profile-profesores.module').then( m => m.ProfileProfesoresPageModule)
+  },
+  {
+    path: 'pokedex',
+    loadChildren: () => import('./pages/pokedex/pokedex.module').then( m => m.PokedexPageModule)
   },
 
 
