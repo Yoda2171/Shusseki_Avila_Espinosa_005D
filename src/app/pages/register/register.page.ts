@@ -49,7 +49,6 @@ export class RegisterPage implements OnInit {
       this.registerService.addEstudiante(this.newUsuario).then((dato) => {
         this.newUsuario = <Usuario>{};
         this.showToast('Dato agregados');
-        form.clear();
       });
     }
     if (form.tipo === 'Profesor') {
@@ -59,6 +58,7 @@ export class RegisterPage implements OnInit {
         form.clear();
       });
     }
+    this.formularioRegistro.reset();
 
     if (this.formularioRegistro.invalid) {
       const alert = await this.alertController.create({
