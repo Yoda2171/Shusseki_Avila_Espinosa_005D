@@ -49,14 +49,17 @@ export class RegisterPage implements OnInit {
       this.registerService.addEstudiante(this.newUsuario).then((dato) => {
         this.newUsuario = <Usuario>{};
         this.showToast('Dato agregados');
+        this.formularioRegistro.reset();
       });
     }
     if (form.tipo === 'Profesor') {
       this.registerService.addProfesores(this.newUsuario).then((dato) => {
         this.newUsuario = <Usuario>{};
         this.showToast('Dato agregados');
+        this.formularioRegistro.reset();
       });
     }
+    
 
     if (this.formularioRegistro.invalid) {
       const alert = await this.alertController.create({
