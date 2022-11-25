@@ -12,6 +12,7 @@ import { Drivers } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { QRCodeModule } from 'angularx-qrcode';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
