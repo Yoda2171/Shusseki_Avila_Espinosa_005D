@@ -8,105 +8,237 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-text color="danger">
-      <p>Monkey D Luffy</p>
-    </ion-text>
-    <ion-radio-group>
-      <ion-row>
-        <ion-item>
-          <ion-label class="ion-margin-end">Presente</ion-label>
-          <ion-radio value="Presente"></ion-radio>
-        </ion-item>
+  <div *ngIf="myAngularxQrCode == null; else elseBlock">
+    <ion-item>
+      <ion-text color="danger">
+        <p>Monkey D Luffy</p>
+      </ion-text>
+      <ion-radio-group value="Ausente">
+        <ion-row>
+          <ion-item>
+            <ion-label class="ion-margin-end">Presente</ion-label>
+            <ion-radio value="Presente"></ion-radio>
+          </ion-item>
 
-        <ion-item>
-          <ion-label class="ion-margin-end">Ausente</ion-label>
-          <ion-radio value="Ausente"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label class="ion-margin-end">Justificado</ion-label>
-          <ion-radio value="Justificado"></ion-radio>
-        </ion-item>
-      </ion-row>
-    </ion-radio-group>
-  </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Ausente</ion-label>
+            <ion-radio value="Ausente"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Justificado</ion-label>
+            <ion-radio value="Justificado"></ion-radio>
+          </ion-item>
+        </ion-row>
+      </ion-radio-group >
+    </ion-item>
 
-  <ion-item>
-    <ion-text color="primary">
-      <p>Nami</p>
-    </ion-text>
+    <ion-item>
+      <ion-text color="primary">
+        <p>Nami</p>
+      </ion-text>
 
-    <ion-radio-group>
-      <ion-row>
-        <ion-item>
-          <ion-label class="ion-margin-end">Presente</ion-label>
-          <ion-radio value="Presente"></ion-radio>
-        </ion-item>
+      <ion-radio-group value="Ausente">
+        <ion-row>
+          <ion-item>
+            <ion-label class="ion-margin-end">Presente</ion-label>
+            <ion-radio value="Presente"></ion-radio>
+          </ion-item>
 
-        <ion-item>
-          <ion-label class="ion-margin-end" >Ausente</ion-label>
-          <ion-radio value="Ausente"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label class="ion-margin-end">Justificado</ion-label>
-          <ion-radio value="Justificado"></ion-radio>
-        </ion-item>
-      </ion-row>
-    </ion-radio-group>
-  </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Ausente</ion-label>
+            <ion-radio value="Ausente"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Justificado</ion-label>
+            <ion-radio value="Justificado"></ion-radio>
+          </ion-item>
+        </ion-row>
+      </ion-radio-group>
+    </ion-item>
 
-  <ion-item>
-    <ion-text color="success">
-      <p>Roronoa Zoro</p>
-    </ion-text>
+    <ion-item>
+      <ion-text color="success">
+        <p>Roronoa Zoro</p>
+      </ion-text>
 
-    <ion-radio-group>
-      <ion-row>
-        <ion-item>
-          <ion-label class="ion-margin-end">Presente</ion-label>
-          <ion-radio value="Presente"></ion-radio>
-        </ion-item>
+    
+      <ion-radio-group value="Ausente">
+        <ion-row>
+          <ion-item>
+            <ion-label class="ion-margin-end">Presente</ion-label>
+            <ion-radio value="Presente"></ion-radio>
+          </ion-item>
 
-        <ion-item>
-          <ion-label class="ion-margin-end">Ausente</ion-label>
-          <ion-radio value="Ausente"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label class="ion-margin-end">Justificado</ion-label>
-          <ion-radio value="Justificado"></ion-radio>
-        </ion-item>
-      </ion-row>
-    </ion-radio-group>
-  </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Ausente</ion-label>
+            <ion-radio value="Ausente"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Justificado</ion-label>
+            <ion-radio value="Justificado"></ion-radio>
+          </ion-item>
+        </ion-row>
+      </ion-radio-group>
+    </ion-item>
 
-  <ion-item>
-    <ion-text  color="warning">
-      <p>Vinsmoke Sanji</p>
-    </ion-text>
+    <ion-item>
+      <ion-text color="warning">
+        <p>Vinsmoke Sanji</p>
+      </ion-text>
 
-    <ion-radio-group >
-      <ion-row>
-        <ion-item>
-          <ion-label class="ion-margin-end">Presente</ion-label>
-          <ion-radio value="Presente"></ion-radio>
-        </ion-item>
+      <ion-radio-group value="Ausente">
+        <ion-row>
+          <ion-item>
+            <ion-label class="ion-margin-end">Presente</ion-label>
+            <ion-radio value="Presente"></ion-radio>
+          </ion-item>
 
-        <ion-item>
-          <ion-label class="ion-margin-end">Ausente</ion-label>
-          <ion-radio value="Ausente"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label class="ion-margin-end">Justificado</ion-label>
-          <ion-radio value="Justificado"></ion-radio>
-        </ion-item>
-      </ion-row>
-    </ion-radio-group>
-  </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Ausente</ion-label>
+            <ion-radio value="Ausente"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Justificado</ion-label>
+            <ion-radio value="Justificado"></ion-radio>
+          </ion-item>
+        </ion-row>
+      </ion-radio-group>
+    </ion-item>
+  </div>
+
+  <ng-template #elseBlock >
+    <ion-item>
+      <ion-text color="danger">
+        <p>Monkey D Luffy</p>
+      </ion-text>
+      <ion-radio-group value="{{scannerqr}}">
+        <ion-row>
+          <ion-item>
+            <ion-label class="ion-margin-end">Presente</ion-label>
+            <ion-radio value="Presente"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="ion-margin-end">Ausente</ion-label>
+            <ion-radio value="Ausente"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Justificado</ion-label>
+            <ion-radio value="Justificado"></ion-radio>
+          </ion-item>
+        </ion-row>
+      </ion-radio-group >
+    </ion-item>
+
+    <ion-item>
+      <ion-text color="primary">
+        <p>Nami</p>
+      </ion-text>
+
+      <ion-radio-group value="{{scannerqr}}">
+        <ion-row>
+          <ion-item>
+            <ion-label class="ion-margin-end">Presente</ion-label>
+            <ion-radio value="Presente"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="ion-margin-end">Ausente</ion-label>
+            <ion-radio value="Ausente"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Justificado</ion-label>
+            <ion-radio value="Justificado"></ion-radio>
+          </ion-item>
+        </ion-row>
+      </ion-radio-group>
+    </ion-item>
+
+    <ion-item>
+      <ion-text color="success">
+        <p>Roronoa Zoro</p>
+      </ion-text>
+
+    
+      <ion-radio-group value="{{scannerqr}}">
+        <ion-row>
+          <ion-item>
+            <ion-label class="ion-margin-end">Presente</ion-label>
+            <ion-radio value="Presente"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="ion-margin-end">Ausente</ion-label>
+            <ion-radio value="Ausente"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Justificado</ion-label>
+            <ion-radio value="Justificado"></ion-radio>
+          </ion-item>
+        </ion-row>
+      </ion-radio-group>
+    </ion-item>
+
+    <ion-item>
+      <ion-text color="warning">
+        <p>Vinsmoke Sanji</p>
+      </ion-text>
+
+      <ion-radio-group value="{{scannerqr}}">
+        <ion-row>
+          <ion-item>
+            <ion-label class="ion-margin-end">Presente</ion-label>
+            <ion-radio value="Presente"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label class="ion-margin-end">Ausente</ion-label>
+            <ion-radio value="Ausente"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-margin-end">Justificado</ion-label>
+            <ion-radio value="Justificado"></ion-radio>
+          </ion-item>
+        </ion-row>
+      </ion-radio-group>
+    </ion-item>
+  </ng-template>
+  
+
+
 
   <ion-row>
-    <ion-button (click)="presentarAlerta()" expand="block" shape="round">
+    <ion-button
+      (click)="presentarAlerta()"
+      id="open-modal"
+      expand="block"
+      shape="round"
+    >
       <ion-icon class="ion-margin-end" name="qr-code"></ion-icon>
       <ion-text> Generar QR </ion-text>
+
+      <ion-modal #modal trigger="open-modal">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>QR Code</ion-title>
+              <ion-buttons slot="end">
+                <ion-button (click)="modal.dismiss()"
+                  >Close</ion-button
+                >
+              </ion-buttons>
+            </ion-toolbar>
+            <ion-list>
+              <qrcode
+                [qrdata]="myAngularxQrCode"
+                [width]="310"
+                [errorCorrectionLevel]="'M'"
+                [scale]="1"
+              ></qrcode>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
     </ion-button>
     <ion-button (click)="presentToast('bottom')" expand="block" shape="round">
       <ion-icon class="ion-margin-end" name="save"></ion-icon>
