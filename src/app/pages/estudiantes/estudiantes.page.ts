@@ -7,28 +7,30 @@ import { AlertController, ToastController } from '@ionic/angular';
   styleUrls: ['./estudiantes.page.scss'],
 })
 export class EstudiantesPage implements OnInit {
+
+  public myAngularxQrCode: string = null;
+  public scannerqr: string;
   constructor(
     private alertController: AlertController,
     private toastController: ToastController
-  ) {}
+  ) {
 
-  ngOnInit() {}
+  }
+
+  ngOnInit() {
+
+  }
 
   async presentarAlerta() {
-    const alert = await this.alertController.create({
-      message: `<img src="assets/icon/qr.png" alt="g-maps" style="border-radius: 2px">`,
-      buttons: [
-        {
-            text: 'CANCEL',
-            role: 'false',
-        },
-        {
-            text: 'CONFIRM',
-            role: 'true',
-        },
-    ],
+    this.myAngularxQrCode = 'Presente';
+    this.scannerqr = this.myAngularxQrCode;
+    const toast = await this.toastController.create({
+      message: 'QR Generado',
+      duration: 1500,
+      position: 'bottom',
     });
-    await alert.present();
+
+    await toast.present();
   }
 
   async presentToast() {

@@ -8,6 +8,7 @@ import { ScanQRPageRoutingModule } from './scan-qr-routing.module';
 
 import { ScanQRPage } from './scan-qr.page';
 
+
 @NgModule({
   imports: [
     CommonModule,
