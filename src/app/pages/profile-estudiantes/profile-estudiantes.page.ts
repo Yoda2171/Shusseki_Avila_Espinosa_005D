@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileEstudiantesPage implements OnInit {
   user = { username: String, email: String, telefono: Number, tipo: String };
+  public myAngularxQrCode: string = null;
+
   constructor() {
+     // assign a value
+     this.myAngularxQrCode = 'Your QR code data string';
     this.getUser();
   }
 
